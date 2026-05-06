@@ -13,7 +13,22 @@
     "next": "^15.0.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "tailwind-merge": "^3.5.0"
+    "tailwind-merge": "^3.5.0",
+    "@ai-whisperers/ui": "file:/root/ai-whisperers-base/packages/ui",
+    "@ai-whisperers/theme": "file:/root/ai-whisperers-base/packages/theme",
+    "@ai-whisperers/auth": "file:/root/ai-whisperers-base/packages/auth",
+    "@ai-whisperers/commerce": "file:/root/ai-whisperers-base/packages/commerce",
+    "@ai-whisperers/admin": "file:/root/ai-whisperers-base/packages/admin",
+    "@ai-whisperers/whatsapp": "file:/root/ai-whisperers-base/packages/whatsapp",
+    "@ai-whisperers/seo": "file:/root/ai-whisperers-base/packages/seo",
+    "@ai-whisperers/i18n": "file:/root/ai-whisperers-base/packages/i18n",
+    "@supabase/ssr": "*",
+    "@supabase/supabase-js": "*",
+    "class-variance-authority": "*",
+    "@radix-ui/react-slot": "*",
+    "@radix-ui/react-dialog": "*",
+    "@radix-ui/react-select": "*",
+    "recharts": "*"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.0.0",

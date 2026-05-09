@@ -18,11 +18,5 @@ const config: NextConfig = {
       { source: '/images/(.*)', headers: [{ key: 'Cache-Control', value: 'public, max-age=31536000, immutable' }] },
     ]
   },
-  async redirects() {
-    return [
-      { source: "/carrito", destination: "/tienda", permanent: true },
-      { source: "/ofertas", destination: "/promociones", permanent: true },
-    ]
-  },
 }
 export default config

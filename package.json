@@ -1,5 +1,5 @@
 {
-  "name": "client-template",
+  "name": "jota-ink-tattoo",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -10,32 +10,16 @@
   "dependencies": {
     "clsx": "^2.1.1",
     "lucide-react": "^0.510.0",
-    "next": "^15.0.0",
+    "next": "^15.5.18",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "tailwind-merge": "^3.5.0",
-    "@ai-whisperers/ui": "^0.1.0",
-    "@ai-whisperers/theme": "^0.1.0",
-    "@ai-whisperers/auth": "^0.1.0",
-    "@ai-whisperers/commerce": "^0.1.0",
-    "@ai-whisperers/admin": "^0.1.0",
-    "@ai-whisperers/whatsapp": "^0.1.0",
-    "@ai-whisperers/seo": "^0.1.0",
-    "@ai-whisperers/i18n": "^0.1.0",
-    "@supabase/ssr": "*",
-    "@supabase/supabase-js": "*",
-    "class-variance-authority": "*",
-    "@radix-ui/react-slot": "*",
-    "@radix-ui/react-dialog": "*",
-    "@radix-ui/react-select": "*",
-    "recharts": "*"
+    "tailwind-merge": "^3.5.0"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.0.0",
     "@types/node": "^22.0.0",
     "@types/react": "^19.0.0",
     "tailwindcss": "^4.0.0",
-    "typescript": "^5.8.0",
-    "@ai-whisperers/test-vitest": "^0.1.0"
+    "typescript": "^5.8.0"
   }
 }

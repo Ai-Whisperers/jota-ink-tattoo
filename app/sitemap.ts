@@ -1,30 +1,22 @@
 import type { MetadataRoute } from "next"
 import content from "@/content/es.json"
 
-const base = "https://fun4me.paragu-ai.com"
-const pages = ["", "/tienda", "/envio", "/faq", "/contacto", "/privacidad", "/terminos", "/nosotros", "/promociones", "/blog"]
+const c = content as any
+const base = c.site?.url || "https://jottaink.paragu-ai.com"
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const staticPages = pages.map(path => ({
-    url: `${base}${path}`,
+  const staticPages = [
+    { url: base, priority: 1.0 },
+    { url: `${base}/trabajo`, priority: 0.9 },
+    { url: `${base}/servicios`, priority: 0.8 },
+    { url: `${base}/faq`, priority: 0.7 },
+    { url: `${base}/contacto`, priority: 0.6 },
+  ]
+
+  return staticPages.map(({ url, priority }) => ({
+    url,
     lastModified: new Date(),
-    changeFrequency: (path === "" ? "daily" : "weekly") as "daily" | "weekly",
-    priority: path === "" ? 1 : 0.8,
+    changeFrequency: url === base ? "weekly" as const : "monthly" as const,
+    priority,
   }))
-
-  const blogPosts = (content.blog?.posts || []).map((post: any) => ({
-    url: `${base}/blog/${post.slug}`,
-    lastModified: new Date(post.date || Date.now()),
-    changeFrequency: "monthly" as const,
-    priority: 0.6,
-  }))
-
-  const productPages = (content.products || []).map((p: any) => ({
-    url: `${base}/producto/${p.slug}`,
-    lastModified: new Date(),
-    changeFrequency: "weekly" as const,
-    priority: 0.7,
-  }))
-
-  return [...staticPages, ...blogPosts, ...productPages]
 }

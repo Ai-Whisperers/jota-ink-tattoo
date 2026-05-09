@@ -12,40 +12,24 @@ const socialIcons: Record<string, string> = {
 export function Footer() {
   const cols = f.columns || []
   const social = f.social || []
-  const payments = f.paymentMethods || []
-  const contactStrip = f.contactStrip || []
 
   return (
-    <footer className="bg-secondary py-12 text-secondary-foreground relative">
-      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-accent via-primary to-accent" />
+    <footer className="bg-ink-dark border-t border-border py-12 text-foreground/60">
       <div className="mx-auto max-w-7xl px-4">
-        {/* Contact strip */}
-        {contactStrip.length > 0 && (
-          <div className="mb-10 grid gap-4 border-b border-white/20 pb-8 sm:grid-cols-2">
-            {contactStrip.map((item: any, i: number) => (
-              <div key={i} className="flex items-center gap-3 text-sm text-white/80">
-                <span>{item.icon}</span>
-                <span>{item.text}</span>
-              </div>
-            ))}
-          </div>
-        )}
-
-        <div className="grid gap-10 sm:grid-cols-2 md:grid-cols-4">
-          {/* Brand column */}
+        <div className="grid gap-10 sm:grid-cols-2 md:grid-cols-3">
           <div>
-            <div className="text-xl font-extrabold text-accent mb-3">
-              Fun<span className="text-primary">4</span>Me
+            <div className="text-lg font-extrabold text-accent mb-3 tracking-wider">
+              JOTA <span className="text-foreground">INK</span>
             </div>
-            <p className="text-sm text-white/60 leading-relaxed">{f.description}</p>
+            <p className="text-sm text-foreground/50 leading-relaxed">{f.description}</p>
           </div>
 
           {cols.map((col: any, i: number) => (
             <div key={i}>
-              <h4 className="mb-4 text-sm font-semibold uppercase tracking-wider text-white/70">{col.title}</h4>
+              <h4 className="mb-4 text-sm font-semibold uppercase tracking-wider text-foreground/40">{col.title}</h4>
               <div className="flex flex-col gap-2 text-sm">
                 {(col.links || []).map((lnk: any, j: number) => (
-                  <Link key={j} href={lnk.href} className="text-white/60 hover:text-white transition-colors">
+                  <Link key={j} href={lnk.href} className="text-foreground/50 hover:text-accent transition-colors">
                     {lnk.label}
                   </Link>
                 ))}
@@ -54,12 +38,11 @@ export function Footer() {
           ))}
         </div>
 
-        {/* Social */}
         {social.length > 0 && (
-          <div className="mt-10 flex items-center gap-3">
+          <div className="mt-10 flex items-center gap-3 border-t border-border pt-8">
             {social.map((s: any, i: number) => (
               <a key={i} href={s.url} target="_blank" rel="noopener noreferrer"
-                className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white/60 hover:bg-white/20 hover:text-white transition-all"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-border text-foreground/50 hover:text-accent hover:border-accent transition-all"
                 aria-label={s.name}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                   <path d={socialIcons[s.icon] || ""}/>
@@ -69,22 +52,8 @@ export function Footer() {
           </div>
         )}
 
-        {/* Payment methods */}
-        {payments.length > 0 && (
-          <div className="mt-10 border-t border-white/20 pt-8">
-            <p className="mb-4 text-xs font-semibold uppercase tracking-wider text-white/50">Medios de pago</p>
-            <div className="flex flex-wrap gap-3">
-              {payments.map((pm: any, i: number) => (
-                <div key={i} className="flex items-center rounded-lg bg-white/10 px-3 py-2 text-xs font-bold text-white/70 shadow-sm">
-                  {pm.name}
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
-
-        <div className="mt-8 text-center text-xs text-white/40">
-          {f.copyright || `© ${new Date().getFullYear()} Fun4Me Store. Todos los derechos reservados.`}
+        <div className="mt-8 text-center text-xs text-foreground/30">
+          {f.copyright || `© 2026 Jota Ink.`}
         </div>
       </div>
     </footer>
